@@ -2,6 +2,9 @@
 import mrs
 import string
 import re 
+import time
+
+
 
 Apostrophe = re.compile(r"[\w']+") #looking for words like "word", "word's"
 
@@ -25,7 +28,12 @@ class WordCount(mrs.MapReduce):
     def reduce(self, word, counts):
         yield sum(counts)
 
+
+
 if __name__ == '__main__':
     mrs.main(WordCount)
+
+
+
 
 # vim: et sw=4 sts=4
